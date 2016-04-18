@@ -71,7 +71,10 @@ class roadNetwork{
 		return false;	
 	}
 	
-	
+	public int tankCapacity(int s,int t){
+		return 1;
+			
+	}
 	
 }
 
@@ -79,15 +82,34 @@ class lab5{
 	
 	public static void main(String[] args){
 		Scanner input=new Scanner(System.in);
-		System.out.println("Give 2 cities and the reservoir of the car and see if you can travel from one to other.");
-		System.out.print("Give 1st city:");
-		int firstCity=input.nextInt();
-		System.out.print("Give 2nd city:");
-		int secondCity=input.nextInt();
-		System.out.print("Give the reservoir:");
-		int reservoir=input.nextInt();
-		roadNetwork rn=new roadNetwork("input.txt",9,reservoir);
-		System.out.println("You can travel:"+rn.feasiblePath(firstCity,secondCity));
-		
+		int answer=0;
+		while(true){
+			System.out.println("1)Feasible Path");
+			System.out.println("2)Tank Capacity");
+			System.out.println("3)exit");
+			System.out.print("Press a number:");
+			answer=input.nextInt();
+			if(answer==1){
+				System.out.println("Give 2 cities and the reservoir of the car and see if you can travel from one to other.");
+				System.out.print("Give 1st city:");
+				int firstCity=input.nextInt();
+				System.out.print("Give 2nd city:");
+				int secondCity=input.nextInt();
+				System.out.print("Give the reservoir:");
+				int reservoir=input.nextInt();
+				roadNetwork rn=new roadNetwork("input.txt",9,reservoir);
+				System.out.println("You can travel:"+rn.feasiblePath(firstCity,secondCity));
+			}
+			if(answer==2){
+				
+			}
+			if(answer==3){
+				System.exit(0);
+			}else{
+				System.out.println("You give wrong number.");
+			}
+		}
+			
+			
 	}
 }
